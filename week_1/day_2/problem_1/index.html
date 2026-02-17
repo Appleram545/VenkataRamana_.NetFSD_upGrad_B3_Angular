@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+</head>
+<body >
+<header>
+   
+      <h1 style="text-align: center;">Welcome to Malla reddy institute of engineering and technology </h1>
+       <nav>
+        <a href="index.html">Home</a> 
+        <a href="contact.html">Contact</a>
+    </nav>
+          <h2>Student Registration Form</h2>
+</header>
+
+    <main>
+        <form action="student.js"  method="POST"  autocomplete="off">
+       
+        <label>Full Name:</label>
+        <input type="text" placeholder="Enter your name" name="name" required>
+        <br><br>
+
+       
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" name="email" required>
+        <br><br>
+
+       
+        <label>Password:</label>
+        <input type="password" placeholder="Enter password"  name="password" required>
+        <br><br>
+
+    
+        <label>Gender:</label>
+        <input type="radio" name="gender" required> Male
+        <input type="radio" name="gender"> Female
+        <br><br>
+
+        
+        <label>Select Course:</label>
+        <select required>
+            <option value="">-- Select Course --</option>
+            <option>B.Tech</option>
+            <option>B.Sc</option>
+            <option>BCA</option>
+            <option>MCA</option>
+        </select>
+        <br><br>
+
+       
+        <input type="submit" value="Register">
+
+    </form>
+    </main>
+
+</body>
+</html>

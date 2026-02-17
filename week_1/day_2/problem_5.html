@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Enrollment Form</title>
+  </head>
+  <body>
+    <header>
+      <h1 style="text-align: center">Online Learning Platform</h1>
+      <h2>Course Enrollment</h2>
+    </header>
+    <main>
+      <form action="course.js" method="POST" autocomplete="off">
+        <fieldset>
+          <legend>Enrollment Details</legend>
+
+          <label for="name">Name :</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter Name"
+            required
+          />
+          <br /><br />
+
+          <label for="email">Email :</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter Mail"
+            required
+          />
+          <br /><br />
+
+          <label for="course">Select Course :</label>
+          <input
+            list="courses"
+            id="course"
+            name="course"
+            placeholder="Choose course"
+            required
+          />
+
+          <datalist id="courses">
+            <option value="Html"></option>
+            <option value="CSS"></option>
+            <option value="Java Script"></option>
+            <option value="React"></option>
+          </datalist>
+          <br /><br />
+          <label for="age"> Age :</label>
+          <input type="number" min="20" max="40" name="age" id="age" step="1" required/>
+
+          <br /><br />
+
+          <label for="experience"> years of experience : </label>
+          <input
+            type="range"
+            min="0"
+            max="10"
+            name="yoe"
+            value="2"
+            id="experience"
+          />
+          <br /><br />
+
+          <label for="skill">skill status (0-100%):</label>
+          <meter min="0" max="100" value="50" low="30" high="70" optimum="90" id="skill">
+            50%
+          </meter>
+
+          <p>Beginner to Advanced Level Indicator</p>
+          <br /><br />
+          <label for="progress"> Enrollment Completion :</label>
+          <progress value="70" max="100" id="progress">70%</progress>
+          <p>70% form completed</p>
+          <br /><br />
+
+          <input type="submit" value="submit" />
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

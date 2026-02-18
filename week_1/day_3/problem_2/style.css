@@ -1,0 +1,87 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e0e7ff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 20px;
+    
+}
+
+
+.card {
+    background-color: white;
+    width: 350px;
+    padding: 25px 20px;
+    border: 3px solid #1e3a8a;
+    border-radius: 20px;
+    margin: 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.name {
+    font-family: 'Georgia', serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #1e3a8a;
+    margin-bottom: 8px;
+  
+}
+
+
+.role {
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #2563eb;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+
+.bio {
+    font-family: 'Arial', sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    text-align: justify;
+    background-color: #f0f4ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #1f2937;
+}
+
+
+.btn {
+    background-color: #2563eb;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: 2px solid #1e3a8a;
+
+}
+
+.btn:hover {
+    background-color: #c11f1f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

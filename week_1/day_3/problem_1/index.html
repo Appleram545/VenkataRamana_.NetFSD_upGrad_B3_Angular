@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Form </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1 class="main-heading">Student Registration Page</h1>
+
+  <section class="info-section">
+    <h2>Welcome Students</h2>
+    <p class="description">
+      Please fill in your details in the form .
+    </p>
+  </section>
+
+  <div class="box-demo">
+    Box Model
+  </div>
+
+
+  <form action="student.js" method="POST" autocomplete="off" class="student-form">
+    <fieldset>
+      <legend>Student Details</legend>
+
+      <label>Name :</label>
+      <input type="text" id="uid" name="uid" placeholder="Enter Name" required autofocus />
+
+      <label>Email :</label>
+      <input type="email" id="eml" name="eml" placeholder="Enter Mail" required />
+
+      <label>Mobile No :</label>
+      <input type="tel" placeholder="Enter Mobile Number" pattern="[0-9]{10}" id="ph" name="ph" />
+
+      <label>Age :</label>
+      <input type="number" min="20" max="30" step="1" name="ag" id="ag" required />
+
+      <label>Date :</label>
+      <input type="date" name="Date" id="d1" required />
+
+      <input type="submit" value="Submit" class="submit-btn" />
+
+    </fieldset>
+  </form>
+
+</body>
+</html>
+
+  </body>
+</html>

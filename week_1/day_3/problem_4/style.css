@@ -1,0 +1,54 @@
+body{
+        margin: 0;
+        font-family: "Raleway", sans-serif;
+        background-color: #f4f6f9;
+}
+
+.header{
+    background-color: rgb(220, 184, 184);
+    color: rgb(247, 247, 247);
+    text-align: center;
+    padding: 20px;
+
+}
+
+.blog-container{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 20px;
+
+}
+
+.blog-card{
+    background-color: #f4f6f9;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgb(243, 157, 157);
+    box-sizing: border-box;
+    flex: 1 1 30% ;
+}
+.blog-card h2{
+    color: #51242c;
+    margin-bottom: 10px;
+
+}
+.blog-card p{
+    color: rgb(0, 0, 0);
+    margin-bottom: 15px;
+
+}
+.blog-card button{
+
+    padding: 10px 15px;
+    border: none;
+    background-color: rgb(215, 80, 123);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.blog-card button:hover{
+    background-color: rgb(199, 68, 68);
+}

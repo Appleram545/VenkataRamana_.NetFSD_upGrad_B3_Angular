@@ -1,0 +1,42 @@
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #aac8f4;
+    margin: 0;
+    padding: 40px;
+}
+
+.features-section {
+    background-color: white;
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ /* decendent */
+.features-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style-type: none; /* remove bullets */
+    padding: 0;
+}
+
+.feature-list li {
+    background-color: #eaf2ff;
+    color: #333;
+    padding: 15px;
+    margin-bottom: 12px;
+    border: 2px solid #4a90e2;
+    border-radius: 8px;
+}
+.feature-list li:hover {
+    background-color: #ec77aa;
+    color: white;
+    border: 2px solid #c85878;
+
+}

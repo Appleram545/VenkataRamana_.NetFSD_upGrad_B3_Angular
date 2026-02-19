@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Even Or Odd</title>
+  </head>
+  <body>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button onclick="check()">Analyze</button>
+
+    
+    <div id="output"></div>
+
+    <script>
+      function check() {
+        let num = Number(document.getElementById("numberInput").value);
+
+        let result = "";
+
+        let sign = num >= 0 ? "Positive Number" : "Negative Number";
+        result += "<p>" + sign + "</p>";
+
+        if (num % 2 === 0) {
+          result += "<p>Even Number</p>";
+        } else {
+          result += "<p>Odd Number</p>";
+        }
+
+        result += "<p>Numbers from 1 to " + num + ":</p>";
+
+        for (let i = 1; i <= num; i++) {
+          result += i + " ";
+        }
+
+        document.getElementById("output").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>

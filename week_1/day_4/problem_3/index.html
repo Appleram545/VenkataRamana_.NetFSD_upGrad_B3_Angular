@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount Page</title>
+  </head>
+  <body>
+    <h2>Discount Calculator</h2>
+
+    <input type="number" id="amountInput" placeholder="Enter purchase amount" />
+    <button onclick="cal()">Calculate</button>
+
+    <div id="output"></div>
+
+    <script>
+      function cal() {
+        let amount = Number(document.getElementById("amountInput").value);
+        let outputDiv = document.getElementById("output");
+        if (amount < 0) {
+          outputDiv.innerHTML = "<p>Invalid Amount</p>";
+          return;
+        }
+        let discount = 0;
+        let totalAmount = 0;
+
+        if (amount > 4000) {
+          discount = amount * 0.4;
+        } else if (amount >= 2000) {
+          discount = amount * 0.2;
+        } else {
+          discount = 0;
+        }
+
+        totalAmount = amount - discount;
+
+        outputDiv.innerHTML =
+          "<p>Purchased Amount: " +
+          amount +
+          "</p>" +
+          "<p>Discount: " +
+          discount +
+          "</p>" +
+          "<p>Total Amount to Pay: " +
+          totalAmount +
+          "</p>";
+      }
+    </script>
+  </body>
+</html>

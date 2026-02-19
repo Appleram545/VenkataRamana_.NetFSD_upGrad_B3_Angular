@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grade</title>
+  </head>
+  <body>
+    <header>
+      <h2>Student Grade</h2>
+
+      <input type="number" id="marksInput" placeholder="Enter marks" />
+      <button onclick="check()">Check Grade</button>
+
+      <div id="output"></div>
+    </header>
+
+    <main>
+      <script>
+        function check() {
+          let marks = Number(document.getElementById("marksInput").value);
+          let outputDiv = document.getElementById("output");
+
+          if (marks >= 75) {
+            outputDiv.innerHTML = "<p>Grade A</p>";
+          } else if (marks >= 60) {
+            outputDiv.innerHTML = "<p>Grade B</p>";
+          } else if (marks >= 40) {
+            outputDiv.innerHTML = "<p>Grade C</p>";
+          } else {
+            outputDiv.innerHTML = "<p>Fail</p>";
+          }
+        }
+      </script>
+    </main>
+  </body>
+</html>

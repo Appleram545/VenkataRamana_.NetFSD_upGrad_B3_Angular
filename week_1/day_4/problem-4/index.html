@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Signal</title>
+  </head>
+  <body>
+    <header>
+      <h2>Traffic Signal</h2>
+      <select id="signalInput">
+        <option value="">Select Signal </option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="green">Green</option>
+      </select>
+      <button onclick="check()">Check</button>
+
+      <div id="output"></div>
+    </header>
+    <script>
+      function check() {
+        let signal = document.getElementById("signalInput").value;
+        let outputDiv = document.getElementById("output");
+
+        switch (signal) {
+          case "red":
+            outputDiv.innerHTML = "<p>Stop</p>";
+            break;
+
+          case "orange":
+            outputDiv.innerHTML = "<p>Get Ready</p>";
+            break;
+
+          case "green":
+            outputDiv.innerHTML = "<p>Go</p>";
+            break;
+
+          default:
+            outputDiv.innerHTML = "<p>Please select a signal</p>";
+        }
+      }
+    </script>
+  </body>
+</html>

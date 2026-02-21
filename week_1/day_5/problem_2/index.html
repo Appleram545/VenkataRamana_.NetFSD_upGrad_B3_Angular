@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information</title>
+  </head>
+  <body>
+    <h2>User</h2>
+
+    <button onclick="handleCl()">Show User Info</button>
+
+    <p id="name"></p>
+    <p id="age"></p>
+    <p id="city"></p>
+
+    <script>
+      function handleCl() {
+        var user = {
+          name: "Ram",
+          age: 24,
+          city: "Hyderabad",
+        };
+
+        display(user);
+      }
+
+      function display(Obj) {
+        document.getElementById("name").innerText = "Name: " + Obj.name;
+        document.getElementById("age").innerText = "Age: " + Obj.age;
+        document.getElementById("city").innerText = "City: " + Obj.city;
+      }
+    </script>
+  </body>
+</html>

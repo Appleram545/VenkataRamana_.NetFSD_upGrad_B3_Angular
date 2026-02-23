@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Storage Example</title>
+  </head>
+  <body>
+    <h2>Registration Form</h2>
+
+    <label for="">Name:</label><br />
+    <input type="text" id="name" /><br /><br />
+
+    <label for="">Email :</label><br />
+    <input type="text" id="email" /><br /><br />
+
+    <label for="">Age :</label><br />
+    <input type="number" id="age" /><br /><br />
+
+    <button onclick="saveData()">Submit</button>
+    <button onclick="showData()">Show Saved Data</button>
+
+    <h3>Saved Data:</h3>
+    <p id="output"></p>
+
+    <script>
+      function saveData() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let age = document.getElementById("age").value;
+
+        if (name !== "" && email.includes("@") && age > 18) {
+          sessionStorage.setItem("name", name);
+          sessionStorage.setItem("email", email);
+          sessionStorage.setItem("age", age);
+
+          alert("Data Stored Successfully!");
+        } else {
+          alert("Please enter valid details!");
+        }
+      }
+
+      function showData() {
+        let name = sessionStorage.getItem("name");
+        let email = sessionStorage.getItem("email");
+        let age = sessionStorage.getItem("age");
+
+        document.getElementById("output").innerText =
+          "Name: " + name + " || Email: " + email + "  || Age: " + age;
+      }
+    </script>
+  </body>
+</html>

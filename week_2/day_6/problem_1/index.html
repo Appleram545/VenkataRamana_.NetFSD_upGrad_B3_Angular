@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Notes</title>
+  </head>
+
+  <body>
+    <h2>Personal Notes</h2>
+
+    <textarea
+      id="area"
+      rows="8"
+      placeholder="Write something here..."
+    ></textarea>
+
+    <br /><br />
+
+    <button onclick="saveNote()">Save</button>
+    <button onclick="getText()">Get Saved Note</button>
+    <button onclick="clearNote()">Clear</button>
+
+    <p id="output"></p>
+
+    <script>
+      function saveNote() {
+        let text = document.getElementById("area").value;
+
+        if (text.trim() === "") {
+          alert("Please write something first!");
+          return;
+        }
+
+        localStorage.setItem("personalNote", text);
+        alert("Note Saved Successfully!");
+      }
+
+      function getText() {
+        let savedNote = localStorage.getItem("personalNote");
+
+        if (savedNote !== null) {
+          document.getElementById("output").innerText =
+            "Saved Note: " + savedNote;
+        } else {
+          document.getElementById("output").innerText = "No saved note found!";
+        }
+      }
+
+      function clearNote() {
+        localStorage.removeItem("personalNote");
+        document.getElementById("area").value = "";
+        document.getElementById("output").innerText = "";
+        alert("Note Cleared!");
+      }
+
+      window.onload = function () {
+        let savedNote = localStorage.getItem("personalNote");
+
+        if (savedNote !== null) {
+          document.getElementById("area").value = savedNote;
+        }
+      };
+    </script>
+  </body>
+</html>

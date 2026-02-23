@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location</title>
+  </head>
+
+  <body>
+    <h2>LOCATION</h2>
+
+    <button onclick="getLoc()">Get My Location</button>
+
+    <p id="output"></p>
+    <h3>past 5 Locations :</h3>
+    <ul id="history"></ul>
+
+    <script>
+      function getLoc() {
+        if (!navigator.geolocation) {
+          document.getElementById("output").innerText = "Not supported";
+          return;
+        }
+        navigator.geolocation.getCurrentPosition(function (args) {
+          let lat = args.coords.latitude;
+          let lon = args.coords.longitude;
+
+          document.getElementById("output").innerText =
+            "Latitude :" + lat + " Longitude : " + lon;
+
+          let history = JSON.parse(localStorage.getItem("lochistory")) || [];
+
+          let locData = {
+            latitude: lat,
+            longitude: lon,
+          };
+          history.unshift(locData);
+
+          if (history.length > 5) {
+            history.pop();
+          }
+          localStorage.setItem("lochistory", JSON.stringify(history));
+
+          displayHistory();
+        });
+      }
+      function displayHistory() {
+        let list = document.getElementById("history");
+        list.innerHTML = "";
+
+        let history = JSON.parse(localStorage.getItem("lochistory")) || [];
+
+        for (let i = 0; i < history.length; i++) {
+          let loc = history[i];
+
+          let li = document.createElement("li");
+
+          li.innerText =
+            "lat : " + loc.latitude + "," + "lon : " + loc.longitude;
+          list.append(li);
+        }
+      }
+      window.onload = function () {
+        displayHistory();
+      };
+    </script>
+  </body>
+</html>

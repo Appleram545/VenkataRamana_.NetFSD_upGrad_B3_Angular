@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Marks Analyzer</title>
+  </head>
+  <body>
+    <h2>Students Marks Analyzer</h2>
+    <button onclick="analyze()">analyze</button>
+
+    <div id="output"></div>
+
+    <script>
+      const marks = [73, 85, 95, 67, 99];
+
+      const calTotal = (ar) => {
+        return ar.reduce((sum, mark) => sum + mark, 0);
+      };
+
+      const calAverage = (ar) => {
+        const total = calTotal(ar);
+        return total / ar.length;
+      };
+      const getResult = (average) => {
+        return average >= 35 ? "Pass" : "Fail";
+      };
+
+      window.analyze = () => {
+        const total = calTotal(marks);
+        const average = calAverage(marks);
+        const result = getResult(average);
+
+        const formatMarks = marks.map(
+          (mark, index) => `Subject ${index + 1}:${mark}`,
+        );
+
+        document.getElementById("output").innerHTML = ` <h3>Student Report </h3>
+       ${formatMarks.map((mark) => `<p>${mark}</p>`).join("")}
+       <hr>
+       <p><strong>Total:</strong> ${total}</p>
+        <p><strong>Average:</strong> ${average.toFixed(2)}</p>
+        <p><strong>Result:</strong> ${result}</p>`;
+      };
+    </script>
+  </body>
+</html>

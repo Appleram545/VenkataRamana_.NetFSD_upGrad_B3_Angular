@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Cart Summary</title>
+  </head>
+  <body>
+    <h2>🛒 Shopping Cart</h2>
+    <button onclick="show()">Generate Invoice</button>
+
+    <pre id="output"></pre>
+
+    <script>
+      const products = [
+        { name: "Laptop", price: 50000, quantity: 1 },
+        { name: "Mouse", price: 800, quantity: 2 },
+        { name: "Keyboard", price: 1500, quantity: 1 },
+      ];
+
+      const calculateTotal = (items) => {
+        return items.reduce(
+          (total, product) => total + product.price * product.quantity,
+          0,
+        );
+      };
+
+      const generateInvoice = (items) => {
+        const formattedItems = items
+          .map(
+            (item, index) =>
+              `${index + 1}. ${item.name} | Price: ₹${item.price} | Qty: ${item.quantity} | Subtotal: ₹${item.price * item.quantity}`,
+          )
+          .join("\n");
+
+        const total = calculateTotal(items);
+
+        return `
+            SHOPPING CART INVOICE
+${formattedItems}
+            Total Amount: ₹ ${total} 
+`;
+      };
+
+      window.show = () => {
+        const invoice = generateInvoice(products);
+        document.getElementById("output").innerText = invoice;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Filter</title>
+  </head>
+
+  <body>
+    <h2>Employee Management</h2>
+
+    <select id="job">
+      <option value="All">All Employees</option>
+      <option value="Manager">Manager</option>
+      <option value="Salesman">Salesman</option>
+      <option value="Clerk">Clerk</option>
+    </select>
+    <button onclick="show()">Show Emp</button>
+    <div id="output"></div>
+
+    <script>
+      const employees = [
+        { id: 101, name: "Chiku", job: "Manager", salary: 60000 },
+        { id: 102, name: "Ram", job: "Salesman", salary: 30000 },
+        { id: 103, name: "Tony", job: "Clerk", salary: 20000 },
+        { id: 104, name: "sadvika", job: "Manager", salary: 65000 },
+        { id: 105, name: "Sad", job: "Salesman", salary: 28000 },
+      ];
+
+      function show() {
+        const sel = document.getElementById("job").value;
+
+        const filterEmp =
+          sel === "All"
+            ? employees
+            : employees.filter((emp) => emp.job === sel);
+
+        const rows = filterEmp
+          .map(
+            (emp) => `
+        
+        <tr>
+            <td>${emp.id}</td>
+            <td>${emp.name}</td>
+            <td>${emp.job}</td>
+            <td>${emp.salary}</td>
+        </tr>
+        `,
+          )
+          .join("");
+
+        const table = `
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Job</th>
+                <th>Salary</th>
+            </tr>
+        ${rows}
+             </table>`;
+
+        document.getElementById("output").innerHTML = table;
+      }
+    </script>
+  </body>
+</html>

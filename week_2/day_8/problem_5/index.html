@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Mini Product Search</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+      .product {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+      }
+      .product:hover {
+        background-color: #f2f2f2;
+      }
+      .selected {
+        background-color: lightyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Product Search</h2>
+
+    <input type="text" id="text" placeholder="Search product..." />
+    <div id="output"></div>
+
+    <script type="module">
+      const products = [
+        "iPhone 15",
+        "Samsung Galaxy S23",
+        "OnePlus 11",
+        "MacBook Air",
+        "Dell Laptop",
+        "Sony Headphones",
+        "Boat Earbuds",
+        "Apple Watch",
+        "HP Printer",
+        "iPad Pro",
+      ];
+
+      let filteredProducts = [...products];
+
+      const text = document.getElementById("text");
+      const container = document.getElementById("output");
+
+      const render = () => {
+        container.innerHTML = "";
+
+        if (filteredProducts.length === 0) {
+          container.innerHTML = "<p>No Results Found</p>";
+          return;
+        }
+
+        filteredProducts.forEach((item, index) => {
+          container.innerHTML += `
+      <div class="product" data-index="${index}">
+        ${item}
+      </div>
+    `;
+        });
+      };
+
+      const filterProducts = (searchText) => {
+        filteredProducts = products.filter((product) =>
+          product.toLowerCase().includes(searchText.toLowerCase()),
+        );
+
+        render();
+      };
+
+      text.addEventListener("input", (e) => {
+        filterProducts(e.target.value);
+      });
+
+      container.addEventListener("click", (e) => {
+        if (e.target.classList.contains("product")) {
+          document
+            .querySelectorAll(".product")
+            .forEach((p) => p.classList.remove("selected"));
+
+          e.target.classList.add("selected");
+
+          console.log(`You selected: ${e.target.textContent}`);
+        }
+      });
+
+      render();
+    </script>
+  </body>
+</html>

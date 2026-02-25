@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Data Fetcher</title>
+  </head>
+  <body>
+    <h2>Weather Data Fetcher</h2>
+
+    <button id="promiseBtn">(Promise)</button>
+    <button id="asyncBtn">(Async/Await)</button>
+
+    <div id="output"></div>
+
+    <script>
+      const output = document.getElementById("output");
+
+      const apiurl =
+        "https://api.open-meteo.com/v1/forecast?latitude=22&longitude=79&hourly=temperature_2m,wind_speed_10m,wind_direction_10m&current_weather=true&timezone=auto";
+
+      const fetchWeatherPromise = () => {
+        output.innerHTML = "wait..";
+
+        fetch(apiurl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Failed");
+            }
+
+            return response.json();
+          })
+          .then((data) => {
+            const weather = data.current_weather;
+
+            output.innerHTML = `
+                         Temperature: ${weather.temperature} °C <br>
+                         Wind Speed: ${weather.windspeed} km/h <br>
+                        
+                    `;
+          })
+          .catch((error) => {
+            output.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+          });
+      };
+
+      const fetchWeatherAsync = async () => {
+        output.innerHTML = "wait..";
+
+        try {
+          const response = await fetch(apiurl);
+
+          if (!response.ok) {
+            throw new Error("Failed ");
+          }
+
+          const data = await response.json();
+          const weather = data.current_weather;
+
+          output.innerHTML = `
+                    Temperature: ${weather.temperature} °C <br>
+                     Wind Speed: ${weather.windspeed} km/h <br>
+                     
+                `;
+        } catch (error) {
+          output.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+        }
+      };
+
+      document
+        .getElementById("promiseBtn")
+        .addEventListener("click", fetchWeatherPromise);
+
+      document
+        .getElementById("asyncBtn")
+        .addEventListener("click", fetchWeatherAsync);
+    </script>
+  </body>
+</html>

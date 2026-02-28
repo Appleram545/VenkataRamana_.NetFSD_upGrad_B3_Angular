@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>E-Commerce Store</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .hero {
+        background: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+      }
+      img {
+        height: 300px;
+        width: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">ShopZone</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-none d-lg-block">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start" id="offcanvasMenu">
+      <div class="offcanvas-header">
+        <h5>Menu</h5>
+        <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="container">
+        <h1 class="display-4">Welcome to Apple Store</h1>
+        <p class="lead">Best Electronic Deals Everyday</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+      </div>
+    </section>
+
+    <div
+      id="productCarousel"
+      class="carousel slide container my-5"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-4">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQlwOioWVS8BTTAQH5XHMuxKtIvRIzSgH-CKnrzmrltdRRWJx6it0XZlRLZe40EmgGZglXHRSr2ATd0fdvnzaz-rcMoexqcDA"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/k/c/7/-original-imah4jmydtzdqvmz.jpeg?q=70"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcT3WVZJhglYBVXoLiUEuHHGcQ5IUqqSEAFZ-GbUHyCS5S5jwGEhGAOM5-JPxjzKX2XfkEMxzaEhFAYVa9wir7yFx0lrkoDM82hO-TE8eN--ZT1O6jLmFsSwTJc"
+                class="d-block w-100"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <img
+                src="https://www.myimaginestore.com/media/catalog/product/cache/4a48ac28cbb6e9c41470e5be5a6d3043/a/i/airpods_pro_3_pdp_new.png"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="https://rukminim2.flixcart.com/image/2880/2880/xif0q/mobile/0/p/g/-original-imahft6cfwg6yta2.jpeg?q=90"
+                class="d-block w-100"
+              />
+            </div>
+            <div class="col-md-4">
+              <img
+                src="https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airtag-unselect-202601_GEO_IN?wid=890&hei=740&fmt=jpeg&qlt=90&.v=N3ZsUUU4YjZJQUNibU40dGJ4Z3QyOFlXVlNsdzdIcmpxNGw3STIveTRLV2o3MStsc2tjNE1NTFZsdmJoRGZKWnVUb3VPa2FUZVhQMFhDQnVBMWhwQTdRblBxQnlaVDAzbFBETmdyNGFrcHM"
+                class="d-block w-100"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#productCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#productCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <section class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <h4>Fast Delivery</h4>
+          <p>Quick shipping service</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h4>Secure Payment</h4>
+          <p>Safe transactions</p>
+        </div>
+        <div class="col-md-4 mb-4">
+          <h4>24/7 Support</h4>
+          <p>Customer assistance</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-light py-5">
+      <div class="container text-center">
+        <h3>Subscribe for Updates</h3>
+        <form class="row justify-content-center mt-3">
+          <div class="col-md-4 col-sm-8">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="col-md-2 col-sm-4 mt-2 mt-sm-0">
+            <button class="btn btn-primary w-100">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

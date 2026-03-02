@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+  <head>
+    <title>To Do</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+      .completed {
+        text-decoration: line-through;
+        color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>To-Do List</h2>
+
+    <input type="text" id="input" />
+    <button id="btn">Add</button>
+
+    <p>Total: <span id="total">0</span></p>
+    <p>Completed: <span id="completed">0</span></p>
+
+    <ul id="taskList"></ul>
+
+    <script>
+      $(document).ready(function () {
+        function updateCount() {
+          let total = $("#taskList li").length;
+          let completed = $("#taskList li.completed").length;
+
+          $("#total").text(total);
+          $("#completed").text(completed);
+        }
+
+        $("#btn").on("click", function () {
+          let task = $("#input").val();
+
+          if (task == "") return;
+
+          let li = $("<li></li>").text(task + " ");
+
+          let delBtn = $("<button>Delete</button>");
+
+          li.append(delBtn);
+
+          $("#taskList").append(li);
+
+          $("#input").val("");
+
+          updateCount();
+        });
+
+        $("#taskList").on("click", "li", function () {
+          $(this).toggleClass("completed");
+          updateCount();
+        });
+
+        $("#taskList").on("click", "button", function (e) {
+          e.stopPropagation();
+          $(this).parent().remove();
+          updateCount();
+        });
+      });
+    </script>
+  </body>
+</html>

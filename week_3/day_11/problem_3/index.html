@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Product Cart</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <div class="cart">
+      Cart Items:
+      <p id="count">0</p>
+    </div>
+
+    <div id="list">
+      <div class="product">
+        <h4>Product 1</h4>
+        <p>Price: ₹500</p>
+        <button class="btn">Add to Cart</button>
+        <p class="msg"></p>
+      </div>
+
+      <div class="product">
+        <h4>Product 2</h4>
+        <p>Price: ₹800</p>
+        <button class="btn">Add to Cart</button>
+        <p class="msg"></p>
+      </div>
+
+      <div class="product">
+        <h4>Product 3</h4>
+        <p>Price: ₹1200</p>
+        <button class="btn">Add to Cart</button>
+        <p class="msg"></p>
+      </div>
+
+      <div class="product">
+        <h4>Product 4</h4>
+        <p>Price: ₹1500</p>
+        <button class="btn">Add to Cart</button>
+        <p class="msg"></p>
+      </div>
+    </div>
+    <div id="add"></div>
+
+    <script>
+      $(document).ready(function () {
+        var count = 0;
+
+        $("#list").on("click", ".btn", function () {
+          count++;
+
+          $("#count").text(count);
+
+          $(this).prop("disabled", true);
+
+          $(this).next(".msg").text("Added to Cart");
+
+        if(count== 4){
+            $("#add").text("ALL are Added to cart");
+
+        }
+        });
+
+
+      });
+    </script>
+  </body>
+</html>

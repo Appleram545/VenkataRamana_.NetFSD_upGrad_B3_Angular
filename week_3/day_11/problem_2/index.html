@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body{
+            margin-top: 250px;
+            text-align: center;
+        }
+        .s1{
+    display:none;
+}
+
+.t1{
+    border: 4px solid black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+    </style>
+</head>
+<body>
+
+    <div class="t1"> HELLO BRO</div>
+    <div class="s1">HELLO...</div>
+    <br><br>
+
+    <div class="t1">HOW ARE YOU</div>
+    <div class="s1"> I'M FINE.</div>
+    <br><br>
+
+    <div class="t1">WHERE ARE YOU</div>
+    <div class="s1">I'M AT HOME.</div>
+    <br><br>
+
+    <div class="t1">WHAT ARE YOU DOING</div>
+    <div class="s1">NOTHING MUCH</div>
+    <br><br>
+
+    <div class="t1" >BYE BRO</div>
+    <div class="s1">BYE...</div>
+    <br><br>
+
+    <script>
+        $(document).ready(function (){
+            $(".t1").click(function (){
+                $(".s1").hide();
+                $(this).next(".s1").slideToggle();
+
+                
+            });
+
+        });
+    </script>
+    
+</body>
+</html>

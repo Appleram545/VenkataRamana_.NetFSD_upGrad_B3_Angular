@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <h2>Student Feedback</h2>
+      <hr />
+
+      <br /><br />
+      <input type="text" id="name" placeholder="Enter your Name " required />
+      <br /><br />
+      <input type="email" id="email" placeholder="Enter your Email" required />
+      <br /><br />
+
+      <select id="rating">
+        <option value="">Select rating</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+      </select>
+      <br /><br />
+      <textarea
+        id="comments"
+        rows="4"
+        placeholder="Write Your Opinion"
+      ></textarea>
+      <br /><br />
+      <button id="btn">Submit</button>
+      <div id="res"></div>
+    </section>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          var name = $("#name").val().trim();
+          var email = $("#email").val().trim();
+
+          if (name === "" && email === "") {
+            $("#res").text("Please check the name and mail");
+          } else if (name === "") {
+            $("#res").text("Please check the NAME");
+          } else if (email === "") {
+            $("#res").text("Please Check mail");
+          } else {
+            $("#res").text("Thanks for your response");
+
+            $("#name").val("");
+            $("#email").val("");
+            $("#rating").val("");
+            $("#comments").val("");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

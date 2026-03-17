@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "description": "High performance laptop",
+    "price": 60000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "description": "Latest smartphone",
+    "price": 25000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "description": "Noise cancelling headphones",
+    "price": 5000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 4,
+    "name": "Smart Watch",
+    "description": "Fitness tracking watch",
+    "price": 7000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 5,
+    "name": "Keyboard",
+    "description": "Mechanical keyboard",
+    "price": 3500,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 6,
+    "name": "Mouse",
+    "description": "Wireless mouse",
+    "price": 1200,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 7,
+    "name": "Tablet",
+    "description": "Portable tablet device",
+    "price": 18000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 8,
+    "name": "Camera",
+    "description": "Digital HD camera",
+    "price": 32000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 9,
+    "name": "Speaker",
+    "description": "Bluetooth speaker",
+    "price": 4000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 10,
+    "name": "Monitor",
+    "description": "24 inch LED monitor",
+    "price": 15000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 11,
+    "name": "Power Bank",
+    "description": "Fast charging power bank",
+    "price": 2000,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 12,
+    "name": "Router",
+    "description": "High speed WiFi router",
+    "price": 3000,
+    "image": "https://via.placeholder.com/300"
+  }
+]

@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Configure trace listener (log file)
+       
         Trace.Listeners.Clear();
         Trace.Listeners.Add(new TextWriterTraceListener("log.txt"));
         Trace.AutoFlush = true;

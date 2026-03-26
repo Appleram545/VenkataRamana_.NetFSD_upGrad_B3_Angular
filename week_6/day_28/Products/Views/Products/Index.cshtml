@@ -1,0 +1,27 @@
+@model List<Products.Models.Product>
+
+<h2>Product List</h2>
+<table border="2" cellpadding="10" cellspacing="5" table-bordered>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Category</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var p in Model){
+        <tr>
+            <td>@p.Id</td>
+            <td>@p.Name</td>
+            <td>@p.Price</td>
+            <td>@p.Category</td>
+            <td>
+                <a asp-controller="Products" asp-action="Details" asp-route-id="@p.Id">View Details</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

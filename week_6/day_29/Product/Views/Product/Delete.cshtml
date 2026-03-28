@@ -1,0 +1,26 @@
+@using Product.Models
+@model ProductItems 
+
+<h2>Delete the product</h2>
+
+
+@if(Model==null){
+    <p>No products to delete</p>
+}
+else{
+
+    <div>
+        Product Id: @Model.productId <br/>
+        Product Name: @Model.name <br/>
+        Product Price : @Model.price<br/>
+        Product Category : @Model.category <br/>
+    </div>
+}
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.productId">
+
+    <button type="submit">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">back To List</a>
+</form>
+

@@ -1,0 +1,22 @@
+@using Product.Models
+
+@model ProductItems
+
+<h1>Details of The Product</h1>
+
+
+@if(Model==null){
+
+    <p>NO Data Available of the requested Product</p>
+}
+else{
+    <div>
+        product ID : @Model.productId <br/>
+        Product Name : @Model.name <br/>
+        Product Price : @Model.price <br/>
+        Product Category : @Model.category
+    </div>
+}
+
+
+<a asp-action="Index" class="btn btn-secondary">Back to Products</a>

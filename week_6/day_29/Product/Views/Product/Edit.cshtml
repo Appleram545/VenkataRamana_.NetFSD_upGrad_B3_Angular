@@ -1,0 +1,30 @@
+@using Product.Models
+@model ProductItems
+
+
+<form method="post" asp-action="Edit">
+
+    <label asp-for="productId"></label>
+    <input type="hidden" asp-for="productId" readonly>
+
+
+    <br>
+    <br>
+    <label asp-for="name"></label>
+    <input asp-for="name">
+    
+
+    <br>
+    <br>
+    <label asp-for="price"></label>
+    <input asp-for="price">
+    
+    <br>
+    <br>
+    <label asp-for="category"></label>
+    <input asp-for="category">
+   
+    <br>
+    <button type="submit" >Edit</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to Products</a>
+</form>

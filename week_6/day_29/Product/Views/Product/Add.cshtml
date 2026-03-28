@@ -1,0 +1,30 @@
+@model ProductItems
+
+<h2>Add product</h2>
+
+
+<form action="add"method="post">
+
+    <label asp-for="productId"></label>
+    <input asp-for="productId">
+    <span asp-validation-for="productId"></span>
+
+    <br>
+    <label asp-for="name"></label>
+    <input asp-for="name">
+    <span asp-validation-for="name"></span>
+
+    <br>
+    <label asp-for="price"></label>
+    <input asp-for="price">
+    <span asp-validation-for="price"></span>
+    <br>
+    <label asp-for="category"></label>
+    <input asp-for="category">
+    <span asp-validation-for="category"></span>
+    <br>
+    <button type="submit">Add</button>
+
+    <a asp-action="Index" class="btn btn-secondary">Back to Products</a>
+
+</form>

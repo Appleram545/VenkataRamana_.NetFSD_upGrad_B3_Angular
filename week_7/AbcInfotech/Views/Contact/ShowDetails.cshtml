@@ -1,0 +1,42 @@
+@using AbcInfotech.Models
+@model List<AbcInfotech.Models.ContactInfo>
+
+
+<h1>All Available Contacts</h1>
+
+<a href="/Contact/AddContact" class="btn btn-primary mt-4">Add New Contact</a>
+<br><br>
+<table border="1" cellpadding="10" cellspacing="5" class=" table-bordered text-center table-striped">
+    <thead>
+        <tr>
+        <td>Contact Id</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Company Name</td>
+        <td>Email</td>
+        <td>Phone</td>
+        <td>Designation</td>
+
+    </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model){
+            <tr>
+                <td>@item.ContactId</td>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.CompanyName</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>@item.Designation</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<a href="/Contact/Search" class="btn btn-secondary mt-4">Search Contact</a>
+
+<div>
+    
+</div>

@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "description": "High performance laptop suitable for coding, gaming and multitasking.\nComes with fast processor, SSD storage and long battery backup.",
+    "price": 60000,
+    "image": "images/laptop.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Smartphone",
+    "description": "Latest smartphone with powerful processor and high-quality camera.\nOffers smooth performance, long battery life and sleek design.",
+    "price": 25000,
+    "image": "images/smartphone.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "description": "Noise cancelling headphones for immersive audio experience.\nComfortable design with deep bass and long listening hours.",
+    "price": 5000,
+    "image": "images/headPhones.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Smart Watch",
+    "description": "Smart watch with fitness tracking and health monitoring features.\nTracks steps, heart rate and provides smart notifications.",
+    "price": 7000,
+    "image": "images/SmartWatch.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Keyboard",
+    "description": "Mechanical keyboard with responsive keys for fast typing.\nDurable build with comfortable and smooth key feedback.",
+    "price": 3500,
+    "image": "images/KeyBoard.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Mouse",
+    "description": "Wireless mouse with smooth tracking and ergonomic design.\nEasy to use, portable and perfect for daily work.",
+    "price": 1200,
+    "image": "images/Mouse.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Tablet",
+    "description": "Portable tablet device for entertainment and productivity.\nLightweight design with clear display and long battery life.",
+    "price": 18000,
+    "image": "images/tab.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Camera",
+    "description": "Digital HD camera for capturing high-quality photos and videos.\nPerfect for photography with clear zoom and sharp image quality.",
+    "price": 32000,
+    "image": "images/Camera.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Speaker",
+    "description": "Bluetooth speaker with powerful sound and deep bass.\nPortable design with long battery backup for music anywhere.",
+    "price": 4000,
+    "image": "images/Speaker.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Monitor",
+    "description": "24 inch LED monitor with clear and vibrant display quality.\nIdeal for office work, gaming and multimedia usage.",
+    "price": 15000,
+    "image": "images/Monitor.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Power Bank",
+    "description": "Fast charging power bank for charging devices on the go.\nCompact design with high capacity and safety protection.",
+    "price": 2000,
+    "image": "images/Bank.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Router",
+    "description": "High speed WiFi router for stable and fast internet connection.\nProvides wide coverage and supports multiple devices.",
+    "price": 3000,
+    "image": "images/Router.jpg"
+  }
+]

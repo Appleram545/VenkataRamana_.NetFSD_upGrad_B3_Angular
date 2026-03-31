@@ -1,0 +1,20 @@
+
+<h2>Addition Calculator</h2>
+<form action="/cal/add" method="post">
+
+<label > Number 1 : </label>
+
+<input type="number" name="n1" required>
+<br>
+<label >Number 2 :</label>
+<input type="number" name="n2" required>
+<br>
+<button type="submit" class="btn btn-primary">Calculate</button>
+
+</form>
+
+@if(ViewData["Result"] !=null){
+    <h2>
+        Result : @ViewData["Result"]
+    </h2>
+}

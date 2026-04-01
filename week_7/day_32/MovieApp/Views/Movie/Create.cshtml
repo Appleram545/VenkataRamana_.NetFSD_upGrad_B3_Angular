@@ -1,0 +1,42 @@
+@model MovieApp.Models.Movie
+
+
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 400px;">
+        
+        <h3 class="text-center mb-4">Add Movie</h3>
+
+        <form asp-action="Create">
+            
+            <div class="mb-3">
+                <label class="form-label">Title</label>
+                <input asp-for="Title" class="form-control" />
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Genre</label>
+                <input asp-for="Genre" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Release Date</label>
+                <input asp-for="ReleaseDate" type="date" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Price</label>
+                <input asp-for="Price" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Rating</label>
+                <input asp-for="Rating" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Save
+            </button>
+
+        </form>
+    </div>
+</div>

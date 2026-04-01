@@ -1,0 +1,31 @@
+@model MovieApp.Models.Movie
+
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+
+        <h3 class="text-center mb-4"> Movie Details</h3>
+
+        <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">
+                <strong>Title:</strong> @Model.Title
+            </li>
+            <li class="list-group-item">
+                <strong>Genre:</strong> @Model.Genre
+            </li>
+            <li class="list-group-item">
+                <strong>Release Date:</strong> @Model.ReleaseDate
+            </li>
+            <li class="list-group-item">
+                <strong>Price:</strong> @Model.Price
+            </li>
+            <li class="list-group-item">
+                <strong>Rating:</strong> @Model.Rating
+            </li>
+        </ul>
+
+        <a href="/Movie" class="btn btn-secondary w-100">
+             Back to List
+        </a>
+
+    </div>
+</div>

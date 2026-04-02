@@ -1,0 +1,20 @@
+@model ContactManage.Models.ContactInfo
+
+<h2>Edit Contact</h2>
+
+<form asp-action="EditContact">
+    <input type="hidden" asp-for="ContactId" />
+
+    <input asp-for="FirstName" />
+    <input asp-for="LastName" />
+
+    <input asp-for="EmailId" />
+    <input asp-for="MobileNo" />
+
+    <input asp-for="Designation" />
+
+    <select asp-for="CompanyId" asp-items="ViewBag.Companies"></select>
+    <select asp-for="DepartmentId" asp-items="ViewBag.Departments"></select>
+
+    <button type="submit">Update</button>
+</form>

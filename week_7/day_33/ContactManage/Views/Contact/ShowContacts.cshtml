@@ -1,0 +1,29 @@
+@model List<ContactManage.Models.ContactInfo>
+
+<h2>Contacts</h2>
+
+<a href="/Contact/AddContact">Add New</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Company</th>
+        <th>Department</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName @item.LastName</td>
+            <td>@item.EmailId</td>
+            <td>@item.Company.CompanyName</td>
+            <td>@item.Department.DepartmentName</td>
+            <td>
+                <a href="/Contact/EditContact/@item.ContactId">Edit</a> |
+                <a href="/Contact/DeleteContact/@item.ContactId">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,18 @@
+@model College.Models.Student
+
+<h2>Add Student</h2>
+
+<form asp-action="Create" method="post">
+    
+    <label>Student Name</label>
+    <input asp-for="Name" />
+    <br />
+
+    <label>Course</label>
+    <select asp-for="CourseId" asp-items="ViewBag.Courses">
+        <option value="">Select Course</option>
+    </select>
+    <br />
+
+    <button type="submit">Save</button>
+</form>

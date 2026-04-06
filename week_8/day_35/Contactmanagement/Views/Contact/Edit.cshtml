@@ -1,0 +1,63 @@
+@model ContactInfo
+
+<h2 class="mb-3">Edit Contact</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="ContactId" />
+
+    <div class="mb-2">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label asp-for="EmailId" class="form-label"></label>
+        <input asp-for="EmailId" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label asp-for="MobileNo" class="form-label"></label>
+        <input asp-for="MobileNo" class="form-control" />
+    </div>
+
+    <div class="mb-2">
+        <label asp-for="Designation" class="form-label"></label>
+        <input asp-for="Designation" class="form-control" />
+    </div>
+
+
+    <div class="mb-2">
+        <label class="form-label">Company</label>
+        <select asp-for="CompanyId" class="form-select">
+            @foreach (var c in ViewBag.Companies)
+            {
+                <option value="@c.CompanyId" selected="@(c.CompanyId == Model.CompanyId)">
+                    @c.CompanyName
+                </option>
+            }
+        </select>
+    </div>
+
+
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <select asp-for="DepartmentId" class="form-select">
+            @foreach (var d in ViewBag.Departments)
+            {
+                <option value="@d.DepartmentId" selected="@(d.DepartmentId == Model.DepartmentId)">
+                    @d.DepartmentName
+                </option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+
+</form>

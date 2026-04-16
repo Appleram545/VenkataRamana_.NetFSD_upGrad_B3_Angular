@@ -20,69 +20,32 @@ namespace ShopEz.Controllers
     [Route("api/auth")]
     public class AuthController : ControllerBase
     {
-        private readonly AppDbContext db;
-        private readonly IConfiguration config;
-        public AuthController(AppDbContext _db, IConfiguration _config)
+        private readonly IAuthService authService;
+
+        public AuthController(IAuthService _authService)
         {
-            db = _db;
-            config = _config;
+            authService = _authService;
         }
 
         [HttpPost("register")]
         public IActionResult Register(User user)
         {
-            db.Users.Add(user);
-            db.SaveChanges();
-            return Ok(user);
+            var result = authService.Register(user);
+            return Ok(result);
         }
 
         [HttpPost("login")]
         public IActionResult Login(LoginDto dto)
         {
-            //  ADMIN LOGIN
-            if (dto.Email == "admin@mail.com" && dto.Password == "admin123")
+            try
             {
-                var adminToken = GenerateToken("admin@mail.com", "Admin");
-                return Ok(new { token = adminToken });
+                var token = authService.Login(dto);
+                return Ok(new { token });
             }
-
-            //  USER LOGIN
-            var user = db.Users.FirstOrDefault(x =>
-                x.Email == dto.Email && x.Password == dto.Password);
-
-            if (user == null)
-                return Unauthorized("Invalid credentials");
-
-            var userToken = GenerateToken(user.Email, "User");
-
-            return Ok(new { token = userToken });
-        }
-
-        private string GenerateToken(string email, string role)
-        {
-            var jwt = config.GetSection("Jwt");
-
-            var key = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(jwt["Key"]!)
-            );
-
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var claims = new[]
+            catch (Exception ex)
             {
-        new Claim(ClaimTypes.Name, email),
-        new Claim(ClaimTypes.Role, role)
-    };
-
-            var token = new JwtSecurityToken(
-                issuer: jwt["Issuer"],
-                audience: jwt["Audience"],
-                claims: claims,
-                expires: DateTime.Now.AddHours(1),
-                signingCredentials: creds
-            );
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
+                return Unauthorized(ex.Message);
+            }
         }
     }
 }

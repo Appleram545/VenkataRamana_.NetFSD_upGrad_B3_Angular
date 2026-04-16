@@ -9,39 +9,39 @@ namespace ShopEz.Repositories
 {
     public class ProductRepo : IProductRepo
     {
-        private readonly AppDbContext db;
+        private readonly AppDbContext _db;
 
-        public ProductRepo(AppDbContext _db)
+        public ProductRepo(AppDbContext db)
         {
-            db = _db;
+            _db = db;
         }
 
         public async Task<List<Product>> GetAll()
         {
-            return await db.Products.ToListAsync();
+            return await _db.Products.ToListAsync();
         }
 
         public async Task<Product> GetById(int id)
         {
-            return await db.Products.FindAsync(id);
+            return await _db.Products.FindAsync(id);
         }
 
         public async Task Add(Product p)
         {
-            db.Products.Add(p);
-            await db.SaveChangesAsync();
+            _db.Products.Add(p);
+            await _db.SaveChangesAsync();
         }
 
         public async Task Update(Product p)
         {
-            db.Products.Update(p);
-            await db.SaveChangesAsync();
+            _db.Products.Update(p);
+            await _db.SaveChangesAsync();
         }
 
         public async Task Delete(Product p)
         {
-            db.Products.Remove(p);
-            await db.SaveChangesAsync();
+            _db.Products.Remove(p);
+            await _db.SaveChangesAsync();
         }
     }
 }

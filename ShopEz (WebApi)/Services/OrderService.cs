@@ -9,11 +9,11 @@ namespace ShopEz.Services
 {
     public class OrderService : IOrderService
     {
-        private readonly AppDbContext db;
+        private readonly AppDbContext _db;
 
-        public OrderService(AppDbContext _db)
+        public OrderService(AppDbContext db)
         {
-            db = _db;
+            _db = db;
         }
 
         public async Task<Order> Create(OrderDto dto)
@@ -28,7 +28,7 @@ namespace ShopEz.Services
                 if (i.Qty <= 0)
                     throw new Exception("Qty must be > 0");
 
-                var p = await db.Products.FindAsync(i.ProductId);
+                var p = await _db.Products.FindAsync(i.ProductId);
 
                 if (p == null)
                     throw new Exception("Product not found");
@@ -55,20 +55,20 @@ namespace ShopEz.Services
                 Items = list
             };
 
-            db.Orders.Add(order);
-            await db.SaveChangesAsync();
+            _db.Orders.Add(order);
+            await _db.SaveChangesAsync();
 
             return order;
         }
 
         public async Task<List<Order>> GetAll()
         {
-            return await db.Orders.Include(x => x.Items).ToListAsync();
+            return await _db.Orders.Include(x => x.Items).ToListAsync();
         }
 
         public async Task<Order> GetById(int id)
         {
-            var o = await db.Orders.Include(x => x.Items)
+            var o = await _db.Orders.Include(x => x.Items)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (o == null) throw new Exception("Order not found");

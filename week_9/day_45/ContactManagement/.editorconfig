@@ -1,0 +1,17 @@
+root = true
+
+[*.cs]
+
+
+dotnet_naming_rule.methods_should_be_pascal_case.severity = warning
+dotnet_naming_rule.methods_should_be_pascal_case.symbols = methods
+dotnet_naming_rule.methods_should_be_pascal_case.style = pascal_case_style
+
+
+dotnet_diagnostic.CS0168.severity = error
+
+
+dotnet_diagnostic.CA1062.severity = warning
+
+
+dotnet_diagnostic.CA1502.severity = warning

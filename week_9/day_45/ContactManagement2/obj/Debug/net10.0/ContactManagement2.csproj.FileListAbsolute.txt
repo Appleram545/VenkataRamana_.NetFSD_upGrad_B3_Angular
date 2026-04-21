@@ -1,0 +1,5 @@
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement2/obj/Debug/net10.0/ContactManagement2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement2/obj/Debug/net10.0/ContactManagement2.AssemblyInfoInputs.cache
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement2/obj/Debug/net10.0/ContactManagement2.AssemblyInfo.cs
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement2/obj/Debug/net10.0/ContactManagement2.csproj.CoreCompileInputs.cache
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement2/obj/Debug/net10.0/ContactManagement2.sourcelink.json

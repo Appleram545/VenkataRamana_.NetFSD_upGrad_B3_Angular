@@ -1,0 +1,15 @@
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/bin/Debug/net10.0/ContactManagement
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/bin/Debug/net10.0/ContactManagement.deps.json
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/bin/Debug/net10.0/ContactManagement.runtimeconfig.json
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/bin/Debug/net10.0/ContactManagement.dll
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/bin/Debug/net10.0/ContactManagement.pdb
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.AssemblyInfoInputs.cache
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.AssemblyInfo.cs
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.csproj.CoreCompileInputs.cache
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.sourcelink.json
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.dll
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/refint/ContactManagement.dll
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.pdb
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ContactManagement.genruntimeconfig.cache
+/Users/ram/Documents/Upgrad/week_9/day_45/ContactManagement/obj/Debug/net10.0/ref/ContactManagement.dll

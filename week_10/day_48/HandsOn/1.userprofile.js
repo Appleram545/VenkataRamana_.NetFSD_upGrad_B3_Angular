@@ -1,0 +1,15 @@
+"use strict";
+const userName = "Ram";
+let age = 25;
+const email = "ram4@gmail.com";
+const isSubscribed = true;
+let city = "Hyderabad";
+let score = 100;
+age = age + 1;
+const userMessage = `Hello ${userName}, you are ${age} years old and your email is ${email}`;
+const isEligibleForPremium = age > 18 && isSubscribed;
+console.log(userMessage);
+console.log("City:", city);
+console.log("Score:", score);
+console.log("Updated Age:", age);
+console.log("Is Eligible for Premium:", isEligibleForPremium);

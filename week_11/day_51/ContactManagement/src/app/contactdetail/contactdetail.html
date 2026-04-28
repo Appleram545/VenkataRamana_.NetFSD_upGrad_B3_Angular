@@ -1,0 +1,22 @@
+<h2>Get Contactr Details By Id</h2>
+
+
+<input
+  type="number"
+  [(ngModel)]="id"
+  placeholder="Enter ID">
+
+<button (click)="getContact()">Search</button>
+
+<div *ngIf="contact">
+
+  <p>ID : {{contact.id}}</p>
+  <p>Name : {{contact.name}}</p>
+  <p>Email : {{contact.email}}</p>
+  <p>Phone : {{contact.phone}}</p>
+
+</div>
+
+<div *ngIf="!contact">
+  <p>No contact found</p>
+</div>

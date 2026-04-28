@@ -1,0 +1,19 @@
+<h2>add contact </h2>
+
+<form (ngSubmit)="addContact()" #contactForm="ngForm">
+
+  <input type="number" [(ngModel)]="newContact.id" name="id" placeholder="ID" required>
+  <br>
+
+  <input type="text" [(ngModel)]="newContact.name" name="name" placeholder="Name" required>
+  <br>
+
+  <input type="email" [(ngModel)]="newContact.email" name="email" placeholder="Email"required>
+  <br>
+
+  <input type="text" [(ngModel)]="newContact.phone" name="phone" placeholder="Phone"required>
+  <br>
+
+  <button type="submit" [disabled]="contactForm.invalid">Add Contact</button>
+
+</form>

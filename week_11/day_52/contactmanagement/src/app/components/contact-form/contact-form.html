@@ -1,0 +1,12 @@
+<p>contact-form works!</p>
+<h2>{{isEdit ? 'Edit' : 'Add'}} Contact</h2>
+
+<form (ngSubmit)="submit()">
+
+  <input [(ngModel)]="contact.name" name="name" placeholder="Name" required>
+  <input [(ngModel)]="contact.email" name="email" placeholder="Email" required>
+  <input [(ngModel)]="contact.phone" name="phone" placeholder="Phone">
+  <input [(ngModel)]="contact.status" name="status" placeholder="Status">
+
+  <button type="submit">Save</button>
+</form>

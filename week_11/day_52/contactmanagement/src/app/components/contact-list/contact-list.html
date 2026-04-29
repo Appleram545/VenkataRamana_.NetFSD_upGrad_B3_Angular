@@ -1,0 +1,26 @@
+<p>contact-list works!</p>
+
+
+<a routerLink="/add">Add Contact</a>
+
+
+<p *ngIf="errorMsg">{{errorMsg}}</p>
+
+<table border="1">
+<tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor="let c of contacts">
+    <td>{{c.name}}</td>
+    <td>{{c.email}}</td>
+    <td>
+      <button [routerLink]="['/view', c.id]">View</button>
+      <button [routerLink]="['/edit', c.id]">Edit</button>
+      <button (click)="delete(c.id)">Delete</button>
+    </td>
+  </tr>
+  
+</table>

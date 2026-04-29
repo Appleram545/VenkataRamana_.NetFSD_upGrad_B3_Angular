@@ -1,71 +1,59 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 using ContactManage.Models;
 using ContactManage.Repository;
 
 namespace ContactManage.Controllers
 {
-    [Route("Contact")]
-    public class ContactController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ContactController : ControllerBase
     {
         private readonly IContactRepository _repo;
-        private readonly AppDbContext _context;
 
-        public ContactController(IContactRepository repo, AppDbContext context)
+        public ContactController(IContactRepository repo)
         {
             _repo = repo;
-            _context = context;
         }
 
-        [HttpGet("ShowContacts")]
-        public IActionResult ShowContacts()
+        // GET: api/contact
+        [HttpGet]
+        public IActionResult GetAll()
         {
-            return View(_repo.GetAllContacts());
+            return Ok(_repo.GetAllContacts());
         }
 
-        [HttpGet("AddContact")]
-        public IActionResult AddContact()
+        // GET: api/contact/5
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
         {
-            ViewBag.Companies = new SelectList(_context.Companies, "CompanyId", "CompanyName");
-            ViewBag.Departments = new SelectList(_context.Departments, "DepartmentId", "DepartmentName");
-            return View();
+            var contact = _repo.GetContactById(id);
+            if (contact == null) return NotFound();
+            return Ok(contact);
         }
 
+        // POST: api/contact
         [HttpPost("AddContact")]
-        public IActionResult AddContact(ContactInfo contact)
+        public IActionResult Add(ContactInfo contact)
         {
             _repo.AddContact(contact);
-            return RedirectToAction("ShowContacts");
+            return Ok(contact);
         }
 
-        [HttpGet("EditContact/{id}")]
-        public IActionResult EditContact(int id)
+        // PUT: api/contact/5
+        [HttpPut("EditContact")]
+        public IActionResult Update(int id, ContactInfo contact)
         {
-            var data = _repo.GetContactById(id);
-
-            ViewBag.Companies = new SelectList(_context.Companies, "CompanyId", "CompanyName");
-            ViewBag.Departments = new SelectList(_context.Departments, "DepartmentId", "DepartmentName");
-
-            return View(data);
-        }
-
-        [HttpPost("EditContact")]
-        public IActionResult EditContact(ContactInfo contact)
-        {
+            if (id != contact.ContactId) return BadRequest();
             _repo.UpdateContact(contact);
-            return RedirectToAction("ShowContacts");
+            return Ok();
         }
 
-        [HttpGet("DeleteContact/{id}")]
-        public IActionResult DeleteContact(int id)
+        // DELETE: api/contact/5
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
             _repo.DeleteContact(id);
-            return RedirectToAction("ShowContacts");
+            return Ok();
         }
     }
 }

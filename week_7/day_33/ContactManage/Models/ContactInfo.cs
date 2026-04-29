@@ -15,7 +15,7 @@ namespace ContactManage.Models
         public int CompanyId { get; set; }
         public int DepartmentId { get; set; }
 
-        // Navigation
+    
         public Company Company { get; set; }
         public Department Department { get; set; }
     }

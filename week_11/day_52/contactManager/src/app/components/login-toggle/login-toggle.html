@@ -1,0 +1,5 @@
+<button (click)="toggleLogin()">
+  {{ auth.isLoggedIn ? 'Logout' : 'Login' }}
+</button>
+
+<p>Status: {{ auth.isLoggedIn ? 'Logged In' : 'Logged Out' }}</p>

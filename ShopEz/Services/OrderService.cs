@@ -4,7 +4,6 @@ using ShopEz.DTOs;
 using ShopEz.Data;
 using ShopEz.Repositories;
 
-
 namespace ShopEz.Services
 {
     public class OrderService : IOrderService
@@ -16,7 +15,8 @@ namespace ShopEz.Services
             _db = db;
         }
 
-        public async Task<Order> Create(OrderDto dto)
+        // Now saves userId with the order
+        public async Task<Order> Create(OrderDto dto, int userId)
         {
             if (dto.Items == null || dto.Items.Count == 0)
                 throw new Exception("Cart empty");
@@ -50,6 +50,7 @@ namespace ShopEz.Services
 
             var order = new Order
             {
+                UserId = userId,   //  save who placed the order
                 Date = DateTime.Now,
                 Total = total,
                 Items = list
@@ -61,9 +62,19 @@ namespace ShopEz.Services
             return order;
         }
 
+        // Admin can  get all orders
         public async Task<List<Order>> GetAll()
         {
             return await _db.Orders.Include(x => x.Items).ToListAsync();
+        }
+
+        //  Customer Can get only their own orders
+        public async Task<List<Order>> GetByUserId(int userId)
+        {
+            return await _db.Orders
+                .Where(o => o.UserId == userId)
+                .Include(o => o.Items)
+                .ToListAsync();
         }
 
         public async Task<Order> GetById(int id)

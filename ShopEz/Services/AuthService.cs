@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ShopEz.Models;
 using ShopEz.DTOs;
 using ShopEz.Data;
@@ -25,33 +21,30 @@ namespace ShopEz.Services
 
         public User Register(User user)
         {
-       
             user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-
             _db.Users.Add(user);
             _db.SaveChanges();
-
             return user;
         }
 
         public string Login(LoginDto dto)
         {
-            
+            // Hardcoded admin check
             if (dto.Email == "admin@mail.com" && dto.Password == "admin123")
             {
-                return GenerateToken("admin@mail.com", "Admin");
+                return GenerateToken(0, "admin@mail.com", "Admin"); //  id=0 for hardcoded admin
             }
 
-            
             var user = _db.Users.FirstOrDefault(x => x.Email == dto.Email);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.Password))
                 throw new Exception("Invalid credentials");
 
-            return GenerateToken(user.Email, "User");
+            return GenerateToken(user.Id, user.Email, "User"); // passing real user ID
         }
 
-        private string GenerateToken(string email, string role)
+        //  Added userId parameter to claims
+        private string GenerateToken(int userId, string email, string role)
         {
             var jwt = _config.GetSection("Jwt");
 
@@ -63,6 +56,7 @@ namespace ShopEz.Services
 
             var claims = new[]
             {
+                new Claim(ClaimTypes.NameIdentifier, userId.ToString()), // ✅ THIS was missing!
                 new Claim(ClaimTypes.Name, email),
                 new Claim(ClaimTypes.Role, role)
             };

@@ -3,11 +3,13 @@ using ShopEz.Models;
 
 namespace ShopEz.Models
 {
-
-
     public class Order
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "User ID is required")]
+        [Range(1, int.MaxValue, ErrorMessage = "User ID must be greater than 0")]
+        public int UserId { get; set; }
 
         [Required(ErrorMessage = "Order date is required")]
         public DateTime Date { get; set; } = DateTime.Now;

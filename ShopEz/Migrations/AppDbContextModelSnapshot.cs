@@ -37,6 +37,9 @@ namespace ShopEZ.Migrations
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Orders");
@@ -142,11 +145,13 @@ namespace ShopEZ.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

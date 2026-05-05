@@ -15,6 +15,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// CORS 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngular", policy =>
+        policy.WithOrigins("http://localhost:4200")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+    );
+});
 
 builder.Services.AddAuthentication(options =>
 {
@@ -37,7 +46,6 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
 // SQL Server
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
@@ -57,6 +65,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+
+app.UseCors("AllowAngular");
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
@@ -64,6 +76,7 @@ app.MapControllers();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    dbContext.Database.EnsureCreated(); 
+    dbContext.Database.EnsureCreated();
 }
+
 app.Run();

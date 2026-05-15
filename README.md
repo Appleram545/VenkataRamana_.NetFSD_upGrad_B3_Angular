@@ -1,4 +1,4 @@
-# ShopEx - E-Commerce Microservices Project
+# ShopEZ - E-Commerce Microservices Project
 
 ## Demo Video
 Watch the working project demo here:
